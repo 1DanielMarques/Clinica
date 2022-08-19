@@ -1,6 +1,7 @@
 package com.cliniconect.clinicaapi.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Endereco {
@@ -16,6 +17,8 @@ public class Endereco {
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 
+    public Endereco() {
+    }
 
     public Endereco(String rua, Integer numero, String bairro, String cidade, String estado) {
         this.rua = rua;

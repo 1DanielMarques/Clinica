@@ -17,6 +17,7 @@ public class Paciente {
     @Column(nullable = false)
     private String sexo;
     @OneToMany(mappedBy = "paciente")
+    @Column(nullable = false)
     private List<Endereco> enderecos;
     @Column(nullable = false, length = 11)
     private String cpf;
