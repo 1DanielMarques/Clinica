@@ -10,20 +10,14 @@ import java.util.List;
 public class Paciente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false, length = 200)
     private String nome;
     @Column(nullable = false)
     private String sexo;
-
-
-    @ManyToMany
-    @JoinTable(name = "paciente_endereco",
-            joinColumns = @JoinColumn(name = "paciente_id"),
-            inverseJoinColumns = @JoinColumn(name = "endereco_id"))
-    @NotNull
-    private List<Endereco> endereco;
+    @OneToMany(mappedBy = "paciente")
+    private List<Endereco> enderecos;
     @Column(nullable = false, length = 11)
     private String cpf;
     @Column(nullable = false, length = 11)
@@ -77,7 +71,6 @@ public class Paciente {
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
     }*/
-
     public String getEmail() {
         return email;
     }
@@ -87,10 +80,10 @@ public class Paciente {
     }
 
     public List getEndereco() {
-        return endereco;
+        return enderecos;
     }
 
-    public void setEndereco(List endereco) {
-        this.endereco = endereco;
+    public void setEndereco(List enderecos) {
+        this.enderecos = enderecos;
     }
 }
