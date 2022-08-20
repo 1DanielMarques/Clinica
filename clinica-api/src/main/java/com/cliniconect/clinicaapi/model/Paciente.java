@@ -3,6 +3,7 @@ package com.cliniconect.clinicaapi.model;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 
@@ -23,21 +24,20 @@ public class Paciente {
     private String cpf;
     @Column(nullable = false, length = 11)
     private String celular;
-    //@Column(nullable = false)
-//    private Date dataNascimento;
+    @Column(nullable = false, length = 10)
+    private String dataNascimento;
     @Column(nullable = false, length = 50)
     private String email;
+
+    @Column(nullable = false)
+    private String descricao;
 
     public Long getId() {
         return id;
     }
 
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -48,6 +48,21 @@ public class Paciente {
         this.nome = nome;
     }
 
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
 
     public String getCpf() {
         return cpf;
@@ -65,13 +80,14 @@ public class Paciente {
         this.celular = celular;
     }
 
-    /*public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
-    }*/
+    }
+
     public String getEmail() {
         return email;
     }
@@ -80,11 +96,11 @@ public class Paciente {
         this.email = email;
     }
 
-    public List getEndereco() {
-        return enderecos;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setEndereco(List enderecos) {
-        this.enderecos = enderecos;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }
