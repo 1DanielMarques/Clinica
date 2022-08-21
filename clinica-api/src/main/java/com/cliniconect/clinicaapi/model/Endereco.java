@@ -18,14 +18,16 @@ public class Endereco {
     private Paciente paciente;
 
     public Endereco() {
-    }
 
-    public Endereco(String rua, Integer numero, String bairro, String cidade, String estado) {
+    }
+    public Endereco(Long id, String rua, Integer numero, String bairro, String cidade, String estado, Paciente paciente) {
+        this.id = id;
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
+        this.paciente = paciente;
     }
 
     public Long getId() {

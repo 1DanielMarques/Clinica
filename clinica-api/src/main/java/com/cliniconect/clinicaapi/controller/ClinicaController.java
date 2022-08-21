@@ -20,15 +20,15 @@ public class ClinicaController {
     public List<Paciente> read() {
         return pacienteRepository.findAll();
     }
-    @GetMapping("/{nome}")
+    @GetMapping("nome/{nome}")
     public List<Paciente> buscaNome(@PathVariable String nome) {
         return pacienteRepository.buscaNome(nome);
     }
-    @GetMapping("/{cpf}")
-    public Paciente buscaId(@PathVariable String cpf) {
+    @GetMapping("cpf/{cpf}")
+    public List<Paciente> buscaId(@PathVariable String cpf) {
         return pacienteRepository.buscaCpf(cpf);
     }
-    @GetMapping("/{email}")
+    @GetMapping("email/{email}")
     public List<Paciente> buscaEmail(@PathVariable String email) {
         return pacienteRepository.buscaEmail(email);
     }
@@ -52,7 +52,7 @@ public class ClinicaController {
         p.setCpf(paciente.getCpf());
         p.setCelular(paciente.getCelular());
         p.setEmail(paciente.getEmail());
-        p.setDataNascimento(paciente.getDataNascimento());
+        p.setNascimento(paciente.getNascimento());
         p.setDescricao(paciente.getDescricao());
 
         pacienteRepository.save(p);
