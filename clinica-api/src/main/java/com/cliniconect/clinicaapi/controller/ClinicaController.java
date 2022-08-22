@@ -18,6 +18,11 @@ public class ClinicaController {
     private PacienteRepository pacienteRepository;
 
     @GetMapping
+    public List<Paciente> read() {
+        return pacienteRepository.findAll();
+    }
+
+    @GetMapping("pag")
     public ResponseEntity<?> read(Pageable pageable) {
         return new ResponseEntity<>(pacienteRepository.findAll(pageable), HttpStatus.OK);
     }

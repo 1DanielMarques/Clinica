@@ -1,0 +1,5 @@
+INSERT INTO paciente(nome,sexo,cpf,celular,email,nascimento,descricao)VALUES('Daniel','Masculino','876.144.100-76','4002-8922','daniel@gmail.com','2001-01-01','Gripe');
+INSERT INTO paciente(nome,sexo,cpf,celular,email,nascimento,descricao)VALUES('Joao','Masculino','808.217.730-62','2345-3206','joao@gmail.com','2001-01-01','Pneumonia');
+INSERT INTO paciente(nome,sexo,cpf,celular,email,nascimento,descricao)VALUES('Jonatan','Masculino','065.924.140-49','9872-7532','jonatan@gmail.com','2001-01-01','Dor de cabeca');
+INSERT INTO paciente(nome,sexo,cpf,celular,email,nascimento,descricao)VALUES('Maria','Feminino','146.296.670-59','7289-3535','maria@gmail.com','2001-01-01','Diarreia');
+SELECT * FROM paciente;
