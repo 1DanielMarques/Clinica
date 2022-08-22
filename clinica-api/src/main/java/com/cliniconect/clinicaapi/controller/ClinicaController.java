@@ -4,6 +4,7 @@ import com.cliniconect.clinicaapi.model.Endereco;
 import com.cliniconect.clinicaapi.model.Paciente;
 import com.cliniconect.clinicaapi.repository.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,17 +18,20 @@ public class ClinicaController {
     private PacienteRepository pacienteRepository;
 
     @GetMapping
-    public List<Paciente> read() {
-        return pacienteRepository.findAll();
+    public ResponseEntity<?> read(Pageable pageable) {
+        return new ResponseEntity<>(pacienteRepository.findAll(pageable), HttpStatus.OK);
     }
+
     @GetMapping("nome/{nome}")
     public List<Paciente> buscaNome(@PathVariable String nome) {
         return pacienteRepository.buscaNome(nome);
     }
+
     @GetMapping("cpf/{cpf}")
     public List<Paciente> buscaId(@PathVariable String cpf) {
         return pacienteRepository.buscaCpf(cpf);
     }
+
     @GetMapping("email/{email}")
     public List<Paciente> buscaEmail(@PathVariable String email) {
         return pacienteRepository.buscaEmail(email);

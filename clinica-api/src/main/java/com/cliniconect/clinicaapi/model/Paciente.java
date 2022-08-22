@@ -12,12 +12,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
 @Entity
 public class Paciente {
-
-
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +22,10 @@ public class Paciente {
     private String nome;
     @NotBlank
     private String sexo;
-
-    @JsonFormat(pattern="dd/MM/yyyy")
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate nascimento;
     @OneToMany(mappedBy = "paciente")
     private List<Endereco> enderecos = new ArrayList<Endereco>();
-
     @CPF
     private String cpf;
     @NotBlank
@@ -53,10 +47,10 @@ public class Paciente {
         this.email = email;
         this.descricao = descricao;
     }
-    public Paciente(){
+
+    public Paciente() {
 
     }
-
 
 
     public Long getId() {
@@ -106,14 +100,6 @@ public class Paciente {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-
-/*    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }*/
 
     public String getEmail() {
         return email;
