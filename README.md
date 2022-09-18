@@ -1,8 +1,6 @@
 # Clinica 🚀
 O Projeto **Clínica** foi desenvolvido a fim de ter o primeiro contato com o framework Spring e fazer uma API REST com ele, utilizando o Spring Data. Com a API desenvolvida é possível cadastrar um *Paciente* e fazer requisições HTTP como *POST,GET,PUT,DELETE* e também buscar pacientes com filtros pelo *Nome*,*CPF* e *E-mail*. Além disso, a API faz a validação de CPF, E-mail e Data de Nascimento, no cadastro.
 
-## Pré-requisitos<br>
-
 ## Como utilizar<br>
 
 ## Testes<br>
@@ -12,6 +10,7 @@ O Projeto **Clínica** foi desenvolvido a fim de ter o primeiro contato com o fr
 * [Spring Framework](https://spring.io/) - Framework Spring para Java <img align="center" alt="Spring-logo" height="45" width="55" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg" />
 
 ## Conhecimentos adquiridos<br>
+  * Tive meu primeiro contato com o Spring Framework e pude compreender um pouco a respeito das anotações (@) e dependências;
 
 ## Autor
 * **Daniel Marques**
